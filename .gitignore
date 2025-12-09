@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Office files
+*.docx
+*.rtf
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Node modules (if ever needed)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
