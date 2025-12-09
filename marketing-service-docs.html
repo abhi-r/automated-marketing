@@ -1,0 +1,4224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Digital Marketing Managed Services | Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FAFAF8;
+            --color-surface: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5C5C5C;
+            --color-accent: #EA580C;
+            --color-accent-light: #FFF7ED;
+            --color-accent-dark: #C2410C;
+            --color-border: #E5E5E3;
+            --color-border-strong: #D4D4D4;
+            --color-success: #059669;
+            --color-success-bg: #ECFDF5;
+            --color-warning: #D97706;
+            --color-warning-bg: #FFFBEB;
+            --color-danger: #DC2626;
+            --color-danger-bg: #FEF2F2;
+            --color-monitored: #6366F1;
+            --color-monitored-bg: #EEF2FF;
+            --color-code-bg: #1E293B;
+            --color-inline-code-bg: #F1F5F9;
+            --color-inline-code-text: #0F172A;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+            --max-width: 860px;
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2.5rem;
+            --space-2xl: 4rem;
+        }
+
+        /* Dark Mode - System Preference */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --color-bg: #0F0F0F;
+                --color-surface: #1A1A1A;
+                --color-text: #F5F5F5;
+                --color-text-muted: #A3A3A3;
+                --color-accent: #F97316;
+                --color-accent-light: #431407;
+                --color-accent-dark: #FB923C;
+                --color-border: #2E2E2E;
+                --color-border-strong: #404040;
+                --color-success: #34D399;
+                --color-success-bg: #064E3B;
+                --color-warning: #FBBF24;
+                --color-warning-bg: #451A03;
+                --color-danger: #F87171;
+                --color-danger-bg: #450A0A;
+                --color-monitored: #A5B4FC;
+                --color-monitored-bg: #1E1B4B;
+                --color-code-bg: #0A0A0A;
+                --color-inline-code-bg: #262626;
+                --color-inline-code-text: #E5E5E5;
+            }
+        }
+
+        /* Dark Mode - Manual Override */
+        :root[data-theme="dark"] {
+            --color-bg: #0F0F0F;
+            --color-surface: #1A1A1A;
+            --color-text: #F5F5F5;
+            --color-text-muted: #A3A3A3;
+            --color-accent: #F97316;
+            --color-accent-light: #431407;
+            --color-accent-dark: #FB923C;
+            --color-border: #2E2E2E;
+            --color-border-strong: #404040;
+            --color-success: #34D399;
+            --color-success-bg: #064E3B;
+            --color-warning: #FBBF24;
+            --color-warning-bg: #451A03;
+            --color-danger: #F87171;
+            --color-danger-bg: #450A0A;
+            --color-monitored: #A5B4FC;
+            --color-monitored-bg: #1E1B4B;
+            --color-code-bg: #0A0A0A;
+            --color-inline-code-bg: #262626;
+            --color-inline-code-text: #E5E5E5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: box-shadow 0.2s;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .header-top {
+            padding: var(--space-md) var(--space-xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .doc-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+        }
+
+        .current-section {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: opacity 0.3s, transform 0.3s;
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .current-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .doc-meta {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            text-align: right;
+        }
+
+        .doc-meta .author {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .theme-toggle svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .theme-toggle .icon-sun,
+        .theme-toggle .icon-moon {
+            display: none;
+        }
+
+        :root[data-theme="dark"] .theme-toggle .icon-sun,
+        :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+            display: block;
+        }
+
+        :root[data-theme="light"] .theme-toggle .icon-moon,
+        :root:not([data-theme="dark"]) .theme-toggle .icon-moon {
+            display: block;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+                display: none;
+            }
+            :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+                display: block;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) .theme-toggle .icon-sun {
+                display: none;
+            }
+            :root:not([data-theme="dark"]) .theme-toggle .icon-moon {
+                display: block;
+            }
+        }
+
+        /* Document Selector Dropdown */
+        .doc-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .doc-selector-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--color-accent-light);
+            border: 1px solid var(--color-accent);
+            border-radius: 6px;
+            padding: var(--space-xs) var(--space-sm) var(--space-xs) var(--space-md);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .doc-selector-btn:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .doc-selector-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.2s;
+        }
+
+        .doc-selector.open .doc-selector-btn svg {
+            transform: rotate(180deg);
+        }
+
+        .doc-selector-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s;
+            z-index: 200;
+        }
+
+        .doc-selector.open .doc-selector-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .doc-selector-item {
+            display: block;
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--color-text);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .doc-selector-item:first-child {
+            border-radius: 7px 7px 0 0;
+        }
+
+        .doc-selector-item:last-child {
+            border-radius: 0 0 7px 7px;
+        }
+
+        .doc-selector-item:hover {
+            background: var(--color-bg);
+        }
+
+        .doc-selector-item.active {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* Legacy Tab Navigation (hidden, keeping for JS compatibility) */
+        .tab-nav {
+            display: none;
+        }
+
+        .tab-btn {
+            display: none;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--space-xl);
+        }
+
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.4s ease forwards;
+        }
+
+        .tab-content.fade-out {
+            animation: fadeOutDown 0.2s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOutDown {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Page transition overlay */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--color-bg);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+            transition: opacity 0.15s ease;
+        }
+
+        .page-transition.active {
+            opacity: 1;
+        }
+
+        /* Title Section */
+        .title-section {
+            margin-bottom: var(--space-2xl);
+            text-align: center;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .doc-info {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .doc-info span {
+            margin: 0 var(--space-sm);
+        }
+
+        /* Divider */
+        .divider {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--space-2xl) 0;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-border-strong), var(--color-border-strong));
+        }
+
+        .divider::after {
+            background: linear-gradient(to left, transparent, var(--color-border-strong), var(--color-border-strong));
+        }
+
+        .divider-symbol {
+            padding: 0 var(--space-lg);
+            color: var(--color-accent);
+            font-size: 1.5rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: var(--space-2xl);
+            overflow: hidden;
+        }
+
+        .toc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-lg);
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .toc-title {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text);
+        }
+
+        .toc-content {
+            padding: var(--space-sm) 0;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+
+        .toc-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-sm) var(--space-md);
+            cursor: pointer;
+        }
+
+        .toc-link {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            flex: 1;
+            transition: color 0.2s;
+        }
+
+        .toc-link:hover {
+            color: var(--color-accent);
+        }
+
+        .toc-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-muted);
+            transition: transform 0.2s, color 0.2s;
+            flex-shrink: 0;
+        }
+
+        .toc-toggle:hover {
+            color: var(--color-accent);
+        }
+
+        .toc-item.collapsed .toc-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .toc-sublist {
+            list-style: none;
+            padding: 0 var(--space-md) var(--space-sm) var(--space-xl);
+            max-height: 500px;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.2s;
+            opacity: 1;
+        }
+
+        .toc-item.collapsed .toc-sublist {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            opacity: 0;
+        }
+
+        .toc-sublist a {
+            display: block;
+            padding: 4px 0;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc-sublist a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: var(--space-xl);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            color: var(--color-text);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+
+        li {
+            margin-bottom: var(--space-xs);
+        }
+
+        li::marker {
+            color: var(--color-accent);
+        }
+
+        /* Inline Code */
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            background: var(--color-inline-code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--color-inline-code-text);
+        }
+
+        /* Callouts */
+        .callout {
+            background: var(--color-surface);
+            border-left: 4px solid var(--color-accent);
+            padding: var(--space-md) var(--space-lg);
+            margin: var(--space-lg) 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .callout.warning {
+            border-left-color: var(--color-warning);
+            background: var(--color-warning-bg);
+        }
+
+        .callout.danger {
+            border-left-color: var(--color-danger);
+            background: var(--color-danger-bg);
+        }
+
+        .callout.success {
+            border-left-color: var(--color-success);
+            background: var(--color-success-bg);
+        }
+
+        .callout.info {
+            border-left-color: var(--color-monitored);
+            background: var(--color-monitored-bg);
+        }
+
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: var(--space-lg) 0;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--color-bg);
+            font-weight: 600;
+            text-align: left;
+            padding: var(--space-md);
+            border-bottom: 2px solid var(--color-border);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--color-bg);
+        }
+
+        /* Tags/Chips */
+        .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            vertical-align: middle;
+        }
+
+        .tag-basic { background: #E5E5E5; color: #525252; }
+        .tag-mid { background: #FEF3C7; color: #92400E; }
+        .tag-top { background: #D1FAE5; color: #065F46; }
+        .tag-all { background: #F3F4F6; color: #374151; }
+        .tag-tool { background: #DBEAFE; color: #1E40AF; }
+        .tag-api { background: #FCE7F3; color: #9D174D; }
+
+        .tag-separator {
+            display: inline-block;
+            margin: 0 4px;
+            color: var(--color-text-muted);
+            font-size: 0.75rem;
+        }
+
+        /* Status Tags */
+        .status {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .status-mitigated {
+            background: var(--color-success-bg);
+            color: var(--color-success);
+        }
+
+        .status-monitored {
+            background: var(--color-monitored-bg);
+            color: var(--color-monitored);
+        }
+
+        .status-open {
+            background: var(--color-danger-bg);
+            color: var(--color-danger);
+        }
+
+        .status-recommended {
+            background: var(--color-success-bg);
+            color: var(--color-success);
+        }
+
+        .status-alternative {
+            background: #F3F4F6;
+            color: #6B7280;
+        }
+
+        .status-not-recommended {
+            background: var(--color-danger-bg);
+            color: var(--color-danger);
+        }
+
+        /* Process Flow */
+        .process-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: var(--space-lg) 0;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .process-step {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+            padding: var(--space-md) var(--space-lg);
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+        }
+
+        .process-step:nth-child(even) {
+            background: var(--color-bg);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--color-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .step-desc {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-1 * var(--space-xl) + 2px);
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .timeline-time {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 2px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Code/Config blocks */
+        .config-block {
+            background: var(--color-code-bg);
+            color: #E2E8F0;
+            padding: var(--space-lg);
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .config-block .comment {
+            color: #64748B;
+        }
+
+        .config-block .key {
+            color: #7DD3FC;
+        }
+
+        .config-block .value {
+            color: #86EFAC;
+        }
+
+        .config-block .string {
+            color: #FCD34D;
+        }
+
+        .config-block .keyword {
+            color: #F472B6;
+        }
+
+        /* Architecture Diagram */
+        .architecture-diagram {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-xl);
+            margin: var(--space-lg) 0;
+        }
+
+        .arch-row {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            margin-bottom: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .arch-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .arch-box {
+            background: var(--color-bg);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-md) var(--space-lg);
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .arch-box.primary {
+            background: var(--color-accent-light);
+            border-color: var(--color-accent);
+        }
+
+        .arch-box.secondary {
+            background: #EEF2FF;
+            border-color: var(--color-monitored);
+        }
+
+        .arch-box-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+            margin-bottom: 4px;
+        }
+
+        .arch-box-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .arch-arrow {
+            display: flex;
+            justify-content: center;
+            margin: var(--space-sm) 0;
+            color: var(--color-text-muted);
+        }
+
+        /* Example Placeholder */
+        .example-placeholder {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 2px dashed var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-xl);
+            text-align: center;
+            margin: var(--space-lg) 0;
+        }
+
+        .example-placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            opacity: 0.5;
+        }
+
+        .example-placeholder-text {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .example-placeholder-label {
+            display: inline-block;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: var(--space-sm);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.2s;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--color-accent-dark);
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-xl);
+            text-align: center;
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--color-border);
+            margin: 0 auto var(--space-lg);
+        }
+
+        .footer p {
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer .ai-credit {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .main {
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .current-section {
+                display: none;
+            }
+
+            .tab-nav {
+                padding: 0 var(--space-md);
+            }
+
+            .tab-btn {
+                padding: var(--space-sm) var(--space-md);
+                font-size: 0.85rem;
+            }
+
+            .process-step {
+                padding: var(--space-sm) var(--space-md);
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .arch-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Print */
+        @media print {
+            .header {
+                position: static;
+            }
+
+            .back-to-top, .tab-nav {
+                display: none;
+            }
+
+            .tab-content {
+                display: block !important;
+            }
+
+            .toc {
+                break-inside: avoid;
+            }
+
+            section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="header-inner">
+                <div class="header-left">
+                    <div class="doc-selector" id="docSelector">
+                        <button class="doc-selector-btn" onclick="toggleDocSelector()">
+                            <span id="docType">Operational Plan</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="doc-selector-menu">
+                            <button class="doc-selector-item active" data-tab="operational" onclick="switchTab('operational')">Operational Plan</button>
+                            <button class="doc-selector-item" data-tab="technical" onclick="switchTab('technical')">Technical Plan</button>
+                        </div>
+                    </div>
+                    <span class="current-section" id="currentSection"></span>
+                </div>
+                <div class="doc-meta">
+                    <div class="author">Abhishek Rastogi</div>
+                    <div>v1.0 Draft • December 2025</div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- ==================== OPERATIONAL PLAN TAB ==================== -->
+        <div class="tab-content active" id="operational-content">
+            <div class="title-section">
+                <h1>Automated Digital Marketing Managed Services</h1>
+                <p class="subtitle">Operational playbook covering customer journey, workflows, edge cases, and team responsibilities for delivering AI-powered social media automation at scale.</p>
+                <div class="doc-info">
+                    <span>Author: <strong>Abhishek Rastogi</strong></span>
+                    <span>•</span>
+                    <span>Version 1.0</span>
+                    <span>•</span>
+                    <span>December 2025</span>
+                </div>
+            </div>
+
+            <nav class="toc">
+                <div class="toc-header">
+                    <span class="toc-title">Table of Contents</span>
+                </div>
+                <div class="toc-content">
+                    <ol class="toc-list">
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#executive-summary" class="toc-link">1. Executive Summary</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#core-value-proposition">Core Value Proposition</a></li>
+                                <li><a href="#success-metrics">Success Metrics</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#service-tiers" class="toc-link">2. Service Tiers</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#tier-comparison">Tier Comparison Table</a></li>
+                                <li><a href="#cost-breakdown">Cost Breakdown & Unit Economics</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#platform-requirements" class="toc-link">3. Platform Requirements</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#supported-platforms">Supported Platforms</a></li>
+                                <li><a href="#platform-policies">Platform Policies & Restrictions</a></li>
+                                <li><a href="#customer-platform-setup">Customer Platform Setup</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#customer-journey" class="toc-link">4. Customer Journey</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#journey-steps">Journey Steps</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#onboarding" class="toc-link">5. Onboarding Process</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#pre-call-form">Pre-Call Information Form</a></li>
+                                <li><a href="#onboarding-agenda">Onboarding Call Agenda</a></li>
+                                <li><a href="#post-call-checklist">Post-Call Checklist</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#content-workflow" class="toc-link">6. Content Generation Workflow</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#content-types">Content Types</a></li>
+                                <li><a href="#generation-cadence">Generation Cadence</a></li>
+                                <li><a href="#prompt-config">Prompt Configuration</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#publishing" class="toc-link">7. Publishing & Moderation</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#publishing-schedule">Publishing Schedule</a></li>
+                                <li><a href="#moderation-workflows">Moderation Workflows</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#reporting" class="toc-link">8. Reporting & Analytics</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#data-collection">Data Collection</a></li>
+                                <li><a href="#report-types">Report Types</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#edge-cases" class="toc-link">9. Edge Cases & Escalations</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#content-issues">Content Quality Issues</a></li>
+                                <li><a href="#platform-issues">Platform Issues</a></li>
+                                <li><a href="#customer-issues">Customer Issues</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#roles" class="toc-link">10. Roles & Responsibilities</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#team-roles">Core Team Roles</a></li>
+                                <li><a href="#staffing-model">Staffing Model</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#risks" class="toc-link">11. Risk Mitigation</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#high-priority-risks">High-Priority Risks</a></li>
+                                <li><a href="#risk-register">Risk Register</a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 1: Executive Summary -->
+            <section id="executive-summary" data-section="Executive Summary">
+                <h2>Executive Summary</h2>
+                
+                <p>This document outlines the operational framework for delivering automated digital marketing services to small and medium businesses (SMBs). The service enables customers to establish and maintain a consistent social media presence with minimal ongoing effort through AI-powered content generation and scheduled publishing.</p>
+
+                <h3 id="core-value-proposition">Core Value Proposition</h3>
+                <p>Customers complete a one-time setup session, after which automated systems generate and publish content on their behalf. The service targets businesses that:</p>
+                <ul>
+                    <li>Lack time or expertise for social media management</li>
+                    <li>Want digital presence without dedicated marketing staff</li>
+                    <li>Prefer predictable costs over hiring or agency fees</li>
+                    <li>Need visibility for local SEO/AEO (dentists, vets, trades, etc.)</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-title">💡 Key Differentiator</div>
+                    <p>This is not a software product sold to customers. It is a <strong>managed service</strong> where we handle the complexity of tools, configuration, and publishing. Customers pay for outcomes (posts published, presence maintained), not for tool access.</p>
+                </div>
+
+                <h3 id="success-metrics">Success Metrics</h3>
+                <ul>
+                    <li><strong>Activation Rate:</strong> % of signed customers who complete onboarding within 7 days</li>
+                    <li><strong>Content Delivery Rate:</strong> % of scheduled posts published on time</li>
+                    <li><strong>Customer Retention:</strong> Monthly churn rate target &lt;5%</li>
+                    <li><strong>Quality Score:</strong> % of posts requiring no human intervention</li>
+                </ul>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 2: Service Tiers -->
+            <section id="service-tiers" data-section="Service Tiers">
+                <h2>Service Tiers</h2>
+
+                <h3 id="tier-comparison">Tier Comparison Table</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th><span class="tag tag-basic">Basic</span> $500/mo</th>
+                                <th><span class="tag tag-mid">Growth</span> $999/mo</th>
+                                <th><span class="tag tag-top">Premium</span> $2,000+/mo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Platforms</strong></td>
+                                <td>3 (customer choice)</td>
+                                <td>5</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Posts per week</strong></td>
+                                <td>3 per platform</td>
+                                <td>5 per platform</td>
+                                <td>7+ per platform</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Content format</strong></td>
+                                <td>Text + Image</td>
+                                <td>Text + Image + Video (2-3/week)</td>
+                                <td>Full video, custom avatar content</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Human review</strong></td>
+                                <td>None (fully automated)</td>
+                                <td>All posts reviewed before publish</td>
+                                <td>2-layer review + customer approval</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Approval workflow</strong></td>
+                                <td>Email preview (opt-in)</td>
+                                <td>Email preview (default on)</td>
+                                <td>Dashboard + Email + Slack integration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reporting</strong></td>
+                                <td>Monthly digest</td>
+                                <td>Weekly performance email</td>
+                                <td>Real-time dashboard + weekly call</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Strategy calls</strong></td>
+                                <td>1× onboarding only</td>
+                                <td>1× monthly tuning</td>
+                                <td>Weekly 30-min strategy sync</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Response time</strong></td>
+                                <td>48 hours</td>
+                                <td>24 hours</td>
+                                <td>4 hours (business hours)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Video Content Note</div>
+                    <p>Video content is excluded from the Basic tier due to quality variance in AI-generated video. The risk of brand-damaging output is too high without human review. Video is included from Growth tier upward where human oversight is standard.</p>
+                </div>
+
+                <h3 id="cost-breakdown">Cost Breakdown & Unit Economics</h3>
+
+                <p>Understanding the cost structure per customer is essential for margin planning and pricing decisions.</p>
+
+                <h4>Fixed Monthly Costs</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Cost</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>N8N Self-Hosted VPS</td>
+                                <td>$15-20/mo</td>
+                                <td>Workflow orchestration</td>
+                            </tr>
+                            <tr>
+                                <td>Blotato</td>
+                                <td>$29/mo</td>
+                                <td>Multi-platform publishing API</td>
+                            </tr>
+                            <tr>
+                                <td>InVideo AI (shared)</td>
+                                <td>$28/mo</td>
+                                <td>Video generation (Growth+ tiers)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Fixed</strong></td>
+                                <td><strong>~$72-77/mo</strong></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Variable Costs Per Customer</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Cost</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Claude API (Haiku)</td>
+                                <td>$5-10/mo</td>
+                                <td>~$0.002 per post generation</td>
+                            </tr>
+                            <tr>
+                                <td>Image Generation (if applicable)</td>
+                                <td>$2-5/mo</td>
+                                <td>Optional, varies by tier</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Variable</strong></td>
+                                <td><strong>~$5-15/mo</strong></td>
+                                <td>Per customer</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Margin Analysis by Tier</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Price</th>
+                                <th>Est. Cost/Customer</th>
+                                <th>Gross Margin</th>
+                                <th>Margin %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="tag tag-basic">Basic</span></td>
+                                <td>$500/mo</td>
+                                <td>~$10-15</td>
+                                <td>~$485-490</td>
+                                <td><strong>97%+</strong></td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-mid">Growth</span></td>
+                                <td>$999/mo</td>
+                                <td>~$20-30</td>
+                                <td>~$970-980</td>
+                                <td><strong>97%+</strong></td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-top">Premium</span></td>
+                                <td>$2,000+/mo</td>
+                                <td>~$30-50</td>
+                                <td>~$1,950+</td>
+                                <td><strong>97%+</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout success">
+                    <div class="callout-title">✓ High-Margin Model</div>
+                    <p>The DIY stack (N8N + Claude API + Blotato) achieves <strong>97%+ gross margins</strong> at scale. Fixed costs (~$77/mo) are amortized across customers, while variable costs per customer remain extremely low ($5-15/mo).</p>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Hidden Costs to Consider</div>
+                    <p>Margins above exclude: (1) your time for setup/monitoring, (2) customer support, (3) content review for Growth/Premium tiers, and (4) customer acquisition costs. Factor in ~2-3 hours/month operational overhead per 20 customers.</p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 3: Platform Requirements -->
+            <section id="platform-requirements" data-section="Platform Requirements">
+                <h2>Platform Requirements</h2>
+
+                <p>Understanding platform capabilities, restrictions, and customer requirements is essential for successful service delivery. This section outlines what each platform supports and what customers need to provide.</p>
+
+                <h3 id="supported-platforms">Supported Platforms</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Content Types</th>
+                                <th>Automation Support</th>
+                                <th>Tier Availability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Facebook</strong></td>
+                                <td>Text, Image, Video, Stories</td>
+                                <td><span class="status status-mitigated">Full Support</span></td>
+                                <td><span class="tag tag-all">All Tiers</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Instagram</strong></td>
+                                <td>Image, Reels, Stories, Carousel</td>
+                                <td><span class="status status-mitigated">Full Support</span></td>
+                                <td><span class="tag tag-all">All Tiers</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>LinkedIn</strong></td>
+                                <td>Text, Image, Document, Video</td>
+                                <td><span class="status status-monitored">Publish Only</span></td>
+                                <td><span class="tag tag-all">All Tiers</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TikTok</strong></td>
+                                <td>Video (15s-3min)</td>
+                                <td><span class="status status-mitigated">Full Support</span></td>
+                                <td><span class="tag tag-mid">Growth</span> <span class="tag tag-top">Premium</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>YouTube</strong></td>
+                                <td>Shorts, Long-form Video</td>
+                                <td><span class="status status-monitored">API Limits Apply</span></td>
+                                <td><span class="tag tag-mid">Growth</span> <span class="tag tag-top">Premium</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>X (Twitter)</strong></td>
+                                <td>Text, Image, Video, Threads</td>
+                                <td><span class="status status-mitigated">Full Support</span></td>
+                                <td><span class="tag tag-all">All Tiers</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Business</strong></td>
+                                <td>Posts, Photos, Updates</td>
+                                <td><span class="status status-monitored">Via Partners</span></td>
+                                <td><span class="tag tag-all">All Tiers</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="platform-policies">Platform Policies & Restrictions</h3>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ LinkedIn Restrictions</div>
+                    <p>LinkedIn explicitly prohibits automation for engagement (likes, comments, connection requests). We only use official API partners for <strong>publishing</strong>. Any automation beyond scheduled posting risks account suspension.</p>
+                </div>
+
+                <div class="callout success">
+                    <div class="callout-title">✓ Meta (Facebook/Instagram) — Most Permissive</div>
+                    <p>Graph API supports up to 100 posts/day. Stories, Reels, and third-party automation are explicitly supported. Safest platform for full automation.</p>
+                </div>
+
+                <div class="callout info">
+                    <div class="callout-title">ℹ️ TikTok Business Requirements</div>
+                    <p>TikTok Content Posting API requires a <strong>TikTok Business Account</strong> per customer. OAuth 2.0 authentication required. Video content only — no text-only posts.</p>
+                </div>
+
+                <h3 id="customer-platform-setup">Customer Platform Setup Requirements</h3>
+
+                <p>During onboarding, customers must provide access to the following:</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Account Type Required</th>
+                                <th>Access Method</th>
+                                <th>Customer Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Facebook</strong></td>
+                                <td>Business Page (not personal)</td>
+                                <td>OAuth via Blotato</td>
+                                <td>Grant page admin access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Instagram</strong></td>
+                                <td>Business or Creator account</td>
+                                <td>OAuth via Blotato</td>
+                                <td>Connect to Facebook Page</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LinkedIn</strong></td>
+                                <td>Company Page</td>
+                                <td>OAuth via Blotato</td>
+                                <td>Grant page admin access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TikTok</strong></td>
+                                <td>Business Account</td>
+                                <td>OAuth via Blotato</td>
+                                <td>Convert to business account first</td>
+                            </tr>
+                            <tr>
+                                <td><strong>YouTube</strong></td>
+                                <td>Brand Account (channel)</td>
+                                <td>OAuth via Blotato</td>
+                                <td>Grant channel manager access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>X (Twitter)</strong></td>
+                                <td>Any account</td>
+                                <td>OAuth via Blotato</td>
+                                <td>Authorize app access</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Business</strong></td>
+                                <td>Verified GBP listing</td>
+                                <td>Via Buffer/Hootsuite</td>
+                                <td>Add as location manager</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-title">💡 Blotato: The Key Integration Layer</div>
+                    <p>Blotato normalizes access to all major platforms with a single OAuth flow. It handles token refresh, API compliance, and platform audits — eliminating the need to implement each platform's API individually.</p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 4: Customer Journey -->
+            <section id="customer-journey" data-section="Customer Journey">
+                <h2>Customer Journey</h2>
+
+                <h3 id="journey-steps">Journey Steps</h3>
+
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Discovery</div>
+                            <div class="step-desc">Customer finds service via website, referral, or sales outreach. Views packages, sample content, and pricing.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Sign-Up & Payment</div>
+                            <div class="step-desc">Customer selects tier, completes payment. Receives confirmation email with next steps and onboarding calendar link.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Onboarding Call</div>
+                            <div class="step-desc">30-60 minute session to collect brand assets, define messaging, select platforms. <span class="tag tag-basic">Basic</span>: Single call. <span class="tag tag-mid">Growth</span> <span class="tag-separator">&</span> <span class="tag tag-top">Premium</span>: Extended discovery.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Configuration & Test Run</div>
+                            <div class="step-desc">Team configures automation tools. Generates 3-5 sample posts for customer approval. Adjusts based on feedback.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Go Live</div>
+                            <div class="step-desc">First scheduled posts are published. Customer receives confirmation. Monitoring begins.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <div class="step-title">Ongoing Operation</div>
+                            <div class="step-desc">Automated content generation and publishing continues. Customer receives scheduled reports.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <div class="step-title">Monthly Review & Optimization</div>
+                            <div class="step-desc"><span class="tag tag-mid">Growth</span> <span class="tag-separator">&</span> <span class="tag tag-top">Premium</span>: Scheduled tuning sessions to refine content strategy based on performance.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">🗺️</div>
+                    <div class="example-placeholder-text">Customer journey map visualization showing touchpoints and timeline</div>
+                    <div class="example-placeholder-label">Add example</div>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 4: Onboarding Process -->
+            <section id="onboarding" data-section="Onboarding Process">
+                <h2>Onboarding Process</h2>
+
+                <p>Onboarding is the most critical customer touchpoint. Poor onboarding leads to low-quality content output and early churn. The goal is to extract enough information to configure effective automation while minimizing customer burden.</p>
+
+                <h3 id="pre-call-form">Pre-Call: Information Gathering Form</h3>
+                <p>Sent immediately after sign-up. Customer completes before the onboarding call.</p>
+                
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Required</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Business name & industry</td>
+                                <td>Yes</td>
+                                <td>Content context, hashtags</td>
+                            </tr>
+                            <tr>
+                                <td>Website URL</td>
+                                <td>Yes</td>
+                                <td>Scrape for tone, services, imagery</td>
+                            </tr>
+                            <tr>
+                                <td>Logo (PNG/SVG)</td>
+                                <td>Yes</td>
+                                <td>Branded image posts</td>
+                            </tr>
+                            <tr>
+                                <td>Brand colors (hex codes)</td>
+                                <td>Preferred</td>
+                                <td>Visual consistency</td>
+                            </tr>
+                            <tr>
+                                <td>Target audience description</td>
+                                <td>Yes</td>
+                                <td>Content targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Competitor examples (2-3 URLs)</td>
+                                <td>Preferred</td>
+                                <td>Inspiration, differentiation</td>
+                            </tr>
+                            <tr>
+                                <td>Content topics to emphasize</td>
+                                <td>Yes</td>
+                                <td>Prompt configuration</td>
+                            </tr>
+                            <tr>
+                                <td>Topics/words to avoid</td>
+                                <td>Yes</td>
+                                <td>Content guardrails</td>
+                            </tr>
+                            <tr>
+                                <td>Social platform logins/access</td>
+                                <td>Yes</td>
+                                <td>Publishing authorization</td>
+                            </tr>
+                            <tr>
+                                <td>Existing content samples</td>
+                                <td>Preferred</td>
+                                <td>Tone matching</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">📝</div>
+                    <div class="example-placeholder-text">Screenshot of the pre-call information form UI</div>
+                    <div class="example-placeholder-label">Add example</div>
+                </div>
+
+                <h3 id="onboarding-agenda">Onboarding Call Agenda</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">0-5 min</div>
+                        <p><strong>Introductions & Expectations</strong> — Confirm tier, explain process, timeline to go-live.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">5-15 min</div>
+                        <p><strong>Business Deep-Dive</strong> — Review form responses. Clarify gaps. Understand USPs and voice.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">15-25 min</div>
+                        <p><strong>Platform Selection & Goals</strong> — Confirm which platforms. Discuss success criteria.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">25-35 min</div>
+                        <p><strong>Content Preferences</strong> — Walk through content types. Show samples. Discuss tone.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">35-45 min</div>
+                        <p><strong>Technical Setup</strong> — Connect social accounts (OAuth). Verify permissions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">45-60 min</div>
+                        <p><strong>Next Steps & Questions</strong> — Explain test post timeline. Set expectations.</p>
+                    </div>
+                </div>
+
+                <h3 id="post-call-checklist">Post-Call: Configuration Checklist</h3>
+                <p>Internal checklist completed by operations team within 24 hours of call:</p>
+                <ul>
+                    <li>☐ All brand assets uploaded to content library</li>
+                    <li>☐ Content prompts configured with customer-specific context</li>
+                    <li>☐ Guardrails/blocklist configured (topics to avoid)</li>
+                    <li>☐ Publishing schedule set (days/times)</li>
+                    <li>☐ Platform connections verified and tested</li>
+                    <li>☐ Customer email added to preview notification list</li>
+                    <li>☐ 3-5 test posts generated and queued for customer review</li>
+                    <li>☐ Customer record created in CRM with tier and preferences</li>
+                </ul>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 5: Content Generation Workflow -->
+            <section id="content-workflow" data-section="Content Generation Workflow">
+                <h2>Content Generation Workflow</h2>
+
+                <h3 id="content-types">Content Types by Format</h3>
+                
+                <h4>Text + Image Posts</h4>
+                <p>Standard content type for all tiers. AI generates caption text and pairs with either:</p>
+                <ul>
+                    <li>Customer-provided imagery (uploaded during onboarding)</li>
+                    <li>AI-generated images (branded templates + stock)</li>
+                    <li>Stock imagery (platform library)</li>
+                </ul>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">🖼️</div>
+                    <div class="example-placeholder-text">Sample text + image post for a dental practice showing caption, hashtags, and branded imagery</div>
+                    <div class="example-placeholder-label">Add example</div>
+                </div>
+
+                <h4>Short-Form Video <span class="tag tag-mid">Growth</span> <span class="tag-separator">&</span> <span class="tag tag-top">Premium</span></h4>
+                <p>5-30 second videos for Reels, TikTok, YouTube Shorts. Two production methods:</p>
+                <ul>
+                    <li><strong>Stock assembly:</strong> AI script → stock footage + voiceover + captions</li>
+                    <li><strong>Avatar generation:</strong> AI script → synthetic presenter delivers message</li>
+                </ul>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Video Quality Gate</div>
+                    <p>All video content MUST pass human review before publishing. No exceptions. Video is more visible, harder to edit, and more damaging if wrong.</p>
+                </div>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">🎬</div>
+                    <div class="example-placeholder-text">Sample video storyboard showing script, visual style, and avatar selection</div>
+                    <div class="example-placeholder-label">Add example</div>
+                </div>
+
+                <h3 id="generation-cadence">Generation Cadence</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Generation Frequency</th>
+                                <th>Buffer Size</th>
+                                <th>Lead Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="tag tag-basic">Basic</span></td>
+                                <td>Weekly batch (Mon AM)</td>
+                                <td>1 week ahead</td>
+                                <td>Posts generated 7 days before publish</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-mid">Growth</span></td>
+                                <td>Twice weekly (Mon/Thu)</td>
+                                <td>2 weeks ahead</td>
+                                <td>Posts generated 10-14 days before publish</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-top">Premium</span></td>
+                                <td>Rolling daily</td>
+                                <td>3 weeks ahead</td>
+                                <td>Posts generated 14-21 days before publish</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="prompt-config">Prompt Configuration Structure</h3>
+                <p>Each customer has a configured prompt template that includes:</p>
+                
+                <div class="config-block">
+<span class="comment"># Customer Content Prompt Template</span>
+
+<span class="key">business_context:</span>
+  <span class="key">name:</span> <span class="value">"Sunrise Family Dental"</span>
+  <span class="key">industry:</span> <span class="value">"Dental Practice"</span>
+  <span class="key">location:</span> <span class="value">"Austin, TX"</span>
+  <span class="key">services:</span> <span class="value">["General Dentistry", "Cosmetic", "Pediatric"]</span>
+
+<span class="key">voice:</span>
+  <span class="key">tone:</span> <span class="value">"Warm, professional, family-friendly"</span>
+  <span class="key">avoid:</span> <span class="value">["clinical jargon", "fear-based messaging"]</span>
+  <span class="key">emphasize:</span> <span class="value">["patient comfort", "modern technology"]</span>
+
+<span class="key">content_themes:</span>
+  - <span class="value">"Dental health tips"</span>
+  - <span class="value">"Team spotlights"</span>
+  - <span class="value">"Patient education"</span>
+  - <span class="value">"Community events"</span>
+
+<span class="key">hashtags:</span> <span class="value">["#AustinDentist", "#FamilyDentistry"]</span>
+<span class="key">call_to_action:</span> <span class="value">"Book your appointment: [link]"</span>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 6: Publishing & Moderation -->
+            <section id="publishing" data-section="Publishing & Moderation">
+                <h2>Publishing & Moderation</h2>
+
+                <h3 id="publishing-schedule">Publishing Schedule</h3>
+                <p>Posts are scheduled based on platform-specific best practices, adjusted for customer time zone:</p>
+                <ul>
+                    <li><strong>LinkedIn:</strong> Tue-Thu, 8-10 AM local</li>
+                    <li><strong>Facebook:</strong> Mon-Fri, 1-4 PM local</li>
+                    <li><strong>Instagram:</strong> Mon-Fri, 11 AM & 7 PM local</li>
+                    <li><strong>X/Twitter:</strong> Daily, 9 AM & 12 PM local</li>
+                    <li><strong>TikTok:</strong> Daily, 7-9 PM local</li>
+                    <li><strong>Google Business Profile:</strong> Weekly, Mon AM</li>
+                </ul>
+
+                <h3 id="moderation-workflows">Moderation Workflows by Tier</h3>
+
+                <h4><span class="tag tag-basic">Basic</span> Auto-Publish with Email Preview</h4>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Content Generated</div>
+                            <div class="step-desc">AI generates post based on customer config</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Auto Quality Check</div>
+                            <div class="step-desc">Automated scan for blocklisted words, length limits, image presence</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Email Preview Sent (Opt-In)</div>
+                            <div class="step-desc">24 hours before publish, customer receives preview with "Edit Request" button</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Auto-Publish</div>
+                            <div class="step-desc">If no edit request received, post publishes at scheduled time</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">📧</div>
+                    <div class="example-placeholder-text">Email preview template showing post content, scheduled time, and edit/approve buttons</div>
+                    <div class="example-placeholder-label">Add example</div>
+                </div>
+
+                <h4><span class="tag tag-mid">Growth</span> Human Review + Email Preview</h4>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Content Generated</div>
+                            <div class="step-desc">AI generates post including video content</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Human Review Queue</div>
+                            <div class="step-desc">Content appears in moderation dashboard. Reviewer checks quality, brand alignment.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Approve / Edit / Regenerate</div>
+                            <div class="step-desc">Reviewer approves, makes minor edits, or flags for regeneration</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Email Preview Sent (Default On)</div>
+                            <div class="step-desc">48 hours before publish. Customer can request changes.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Publish</div>
+                            <div class="step-desc">Posts at scheduled time</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4><span class="tag tag-top">Premium</span> Two-Layer Review + Customer Approval</h4>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Content Generated</div>
+                            <div class="step-desc">AI generates premium content including custom video</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">First Review (Content Team)</div>
+                            <div class="step-desc">Quality, accuracy, brand voice check</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Second Review (Account Manager)</div>
+                            <div class="step-desc">Strategic alignment, customer-specific context check</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Customer Approval (Required)</div>
+                            <div class="step-desc">Dashboard + Email notification. Customer must explicitly approve.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Publish on Approval</div>
+                            <div class="step-desc">Only publishes after customer clicks "Approve"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout danger">
+                    <div class="callout-title">🚫 Platform-Specific Restrictions</div>
+                    <p><strong>LinkedIn:</strong> Publishing only. No automated engagement (likes, comments, follows). Violations result in account restrictions. Limit to 1-2 posts/day maximum.</p>
+                    <p style="margin-top: var(--space-sm);"><strong>All Platforms:</strong> Automated replies and engagement are OFF by default. Only enable for specific customer requests with explicit acknowledgment of risks.</p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 7: Reporting & Analytics -->
+            <section id="reporting" data-section="Reporting & Analytics">
+                <h2>Reporting & Analytics</h2>
+
+                <h3 id="data-collection">Data Collection Requirements</h3>
+                <p>To deliver analytics, we need API access or authorized connection to customer social accounts. This is established during onboarding via OAuth authorization.</p>
+
+                <h4>Metrics Collected</h4>
+                <ul>
+                    <li><strong>Reach/Impressions:</strong> How many people saw the content</li>
+                    <li><strong>Engagement:</strong> Likes, comments, shares, saves</li>
+                    <li><strong>Engagement Rate:</strong> Engagement / Reach</li>
+                    <li><strong>Follower Growth:</strong> Net new followers in period</li>
+                    <li><strong>Click-throughs:</strong> Link clicks (where trackable)</li>
+                    <li><strong>Post Performance:</strong> Top/bottom performing content</li>
+                </ul>
+
+                <h3 id="report-types">Report Types by Tier</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Report</th>
+                                <th><span class="tag tag-basic">Basic</span></th>
+                                <th><span class="tag tag-mid">Growth</span></th>
+                                <th><span class="tag tag-top">Premium</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Monthly Digest Email</strong><br><small>Summary of posts, basic metrics</small></td>
+                                <td>✓</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Weekly Performance Email</strong><br><small>Detailed metrics, week-over-week</small></td>
+                                <td>—</td>
+                                <td>✓</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Real-Time Dashboard</strong><br><small>Self-serve access to live metrics</small></td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Content Performance Breakdown</strong><br><small>Which posts worked, why</small></td>
+                                <td>—</td>
+                                <td>Monthly</td>
+                                <td>Weekly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Competitive Benchmark</strong><br><small>vs. industry average</small></td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td>✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">📈</div>
+                    <div class="example-placeholder-text">Sample monthly digest email showing key metrics, top posts, and growth summary</div>
+                    <div class="example-placeholder-label">Add example</div>
+                </div>
+
+                <h3>Upsell Opportunities in Reports</h3>
+                <p>Monthly reports for Basic tier customers include a comparison section:</p>
+                <ul>
+                    <li>"Your posts this month" vs. "Example Growth tier output"</li>
+                    <li>Highlight metrics improvement potential with video content</li>
+                    <li>Clear CTA: "Upgrade to Growth for human-crafted video content"</li>
+                </ul>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 8: Edge Cases & Escalations -->
+            <section id="edge-cases" data-section="Edge Cases & Escalations">
+                <h2>Edge Cases & Escalations</h2>
+
+                <h3 id="content-issues">Content Quality Issues</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Detection</th>
+                                <th>Resolution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI generates factually incorrect content</td>
+                                <td>Human review or customer report</td>
+                                <td>Immediate removal. Regenerate. Update guardrails.</td>
+                            </tr>
+                            <tr>
+                                <td>Content tone doesn't match brand</td>
+                                <td>Customer feedback</td>
+                                <td>Schedule tuning call. Adjust prompts. Regenerate.</td>
+                            </tr>
+                            <tr>
+                                <td>Video quality is unacceptable</td>
+                                <td>Human review catches before publish</td>
+                                <td>Regenerate with different style. Escalate if persistent.</td>
+                            </tr>
+                            <tr>
+                                <td>Post published with error</td>
+                                <td>Customer report or monitoring</td>
+                                <td>Delete if possible. Acknowledge. Post correction if needed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="platform-issues">Platform Issues</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Detection</th>
+                                <th>Resolution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Publishing fails (API error)</td>
+                                <td>Automated monitoring</td>
+                                <td>Auto-retry 3x. Alert ops. Manual publish if needed.</td>
+                            </tr>
+                            <tr>
+                                <td>Customer account access revoked</td>
+                                <td>OAuth failure</td>
+                                <td>Pause publishing. Contact customer to reconnect.</td>
+                            </tr>
+                            <tr>
+                                <td>LinkedIn account restricted</td>
+                                <td>Publishing failure + notification</td>
+                                <td>STOP all activity. Guide customer through appeal.</td>
+                            </tr>
+                            <tr>
+                                <td>Platform API changes</td>
+                                <td>Engineering monitoring</td>
+                                <td>Update integrations. Notify if downtime >24 hours.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="customer-issues">Customer Issues</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Detection</th>
+                                <th>Resolution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Customer unresponsive during onboarding</td>
+                                <td>No form completion in 7 days</td>
+                                <td>Reminder day 3, 7. Phone day 10. Pause billing day 14.</td>
+                            </tr>
+                            <tr>
+                                <td>Customer requests content we can't generate</td>
+                                <td>Support ticket</td>
+                                <td>Explain limitations. Offer alternatives. Escalate if needed.</td>
+                            </tr>
+                            <tr>
+                                <td>Customer wants to pause service</td>
+                                <td>Support request</td>
+                                <td>Offer 1-month pause (max 1x per year). Stop publishing.</td>
+                            </tr>
+                            <tr>
+                                <td>Customer churns</td>
+                                <td>Cancellation request</td>
+                                <td>Exit interview. Remove access. Retain data 30 days.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Escalation Path</h3>
+                <ol>
+                    <li><strong>Level 1 - Support Team:</strong> Standard issues, FAQ, minor adjustments</li>
+                    <li><strong>Level 2 - Operations Lead:</strong> Publishing failures, quality escalations</li>
+                    <li><strong>Level 3 - Account Manager:</strong> Customer complaints, churn risk</li>
+                    <li><strong>Level 4 - Management:</strong> Legal issues, platform bans, service-wide incidents</li>
+                </ol>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 9: Roles & Responsibilities -->
+            <section id="roles" data-section="Roles & Responsibilities">
+                <h2>Roles & Responsibilities</h2>
+
+                <h3 id="team-roles">Core Team Roles</h3>
+
+                <h4>Onboarding Specialist</h4>
+                <ul>
+                    <li>Conducts onboarding calls</li>
+                    <li>Configures customer accounts in automation platform</li>
+                    <li>Creates initial content prompts</li>
+                    <li>Generates and sends test posts for approval</li>
+                </ul>
+                <p><strong>Capacity:</strong> ~8-10 onboardings per week per specialist</p>
+
+                <h4>Content Moderator</h4>
+                <ul>
+                    <li>Reviews generated content before publishing (<span class="tag tag-mid">Growth</span> <span class="tag-separator">&</span> <span class="tag tag-top">Premium</span>)</li>
+                    <li>Approves, edits, or flags for regeneration</li>
+                    <li>Monitors content quality trends</li>
+                </ul>
+                <p><strong>Capacity:</strong> ~200-300 posts reviewed per day per moderator</p>
+
+                <h4>Account Manager (<span class="tag tag-top">Premium</span> Tier)</h4>
+                <ul>
+                    <li>Primary relationship owner for Premium customers</li>
+                    <li>Conducts weekly strategy calls</li>
+                    <li>Second-layer content review</li>
+                    <li>Handles escalations and special requests</li>
+                </ul>
+                <p><strong>Capacity:</strong> ~15-20 Premium accounts per manager</p>
+
+                <h4>Operations Lead</h4>
+                <ul>
+                    <li>Monitors system health and publishing success</li>
+                    <li>Handles platform issues and API failures</li>
+                    <li>Manages escalations from support</li>
+                </ul>
+
+                <h4>Support Team</h4>
+                <ul>
+                    <li>First response to customer inquiries</li>
+                    <li>Handles standard requests (schedule changes, minor edits)</li>
+                    <li>Escalates complex issues</li>
+                </ul>
+
+                <h3 id="staffing-model">Staffing Model by Customer Volume</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customers</th>
+                                <th>Onboarding</th>
+                                <th>Moderation</th>
+                                <th>Account Mgmt</th>
+                                <th>Ops/Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0-50</td>
+                                <td>1 (part-time)</td>
+                                <td>1 (part-time)</td>
+                                <td>0</td>
+                                <td>1 (shared)</td>
+                            </tr>
+                            <tr>
+                                <td>50-150</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>150-300</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>300+</td>
+                                <td>Scale</td>
+                                <td>Scale</td>
+                                <td>Scale w/ Premium %</td>
+                                <td>Scale</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 10: Risk Mitigation -->
+            <section id="risks" data-section="Risk Mitigation">
+                <h2>Risk Mitigation</h2>
+
+                <h3 id="high-priority-risks">High-Priority Risks</h3>
+
+                <div class="callout danger">
+                    <div class="callout-title">🔴 Platform Account Bans (LinkedIn)</div>
+                    <p><strong>Risk:</strong> LinkedIn detects automated activity and restricts customer account.</p>
+                    <p><strong>Likelihood:</strong> Medium &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>ONLY automated publishing (no engagement automation)</li>
+                        <li>Maximum 2 posts/day on LinkedIn</li>
+                        <li>Use only official API-authorized tools</li>
+                        <li>Include LinkedIn risk disclosure in customer agreement</li>
+                    </ul>
+                </div>
+
+                <div class="callout danger">
+                    <div class="callout-title">🔴 AI Content Causes Brand Damage</div>
+                    <p><strong>Risk:</strong> Generated content is offensive, factually wrong, or tone-deaf.</p>
+                    <p><strong>Likelihood:</strong> Low-Medium &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Human review for <span class="tag tag-mid">Growth</span> <span class="tag-separator">&</span> <span class="tag tag-top">Premium</span> tiers</li>
+                        <li>Automated content filters for <span class="tag tag-basic">Basic</span> tier</li>
+                        <li>Email preview with 24-hour delay before publish</li>
+                        <li>"Crisis pause" button - halt all publishing instantly</li>
+                    </ul>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">🟡 Customer Expectations Mismatch</div>
+                    <p><strong>Risk:</strong> Customer expects leads/sales, service delivers presence/visibility.</p>
+                    <p><strong>Likelihood:</strong> High &nbsp;|&nbsp; <strong>Impact:</strong> Medium</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Clear messaging in sales materials: "presence, not leads"</li>
+                        <li>Explicit expectations set during onboarding</li>
+                        <li>Reports focus on reach/engagement, not conversion</li>
+                        <li>Proactive check-in at 30 days to align expectations</li>
+                    </ul>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">🟡 Tool/Platform Dependency</div>
+                    <p><strong>Risk:</strong> Automation tool changes pricing, features, or shuts down.</p>
+                    <p><strong>Likelihood:</strong> Low-Medium &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Avoid single-tool dependency where possible</li>
+                        <li>Maintain backup tool evaluation</li>
+                        <li>Export customer configurations regularly</li>
+                        <li>Monitor tool vendor health/funding</li>
+                    </ul>
+                </div>
+
+                <h3 id="risk-register">Risk Register Summary</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk</th>
+                                <th>Likelihood</th>
+                                <th>Impact</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LinkedIn account restrictions</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>AI content quality failure</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>Customer expectation mismatch</td>
+                                <td>High</td>
+                                <td>Medium</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tool vendor failure</td>
+                                <td>Low</td>
+                                <td>High</td>
+                                <td><span class="status status-monitored">Monitored</span></td>
+                            </tr>
+                            <tr>
+                                <td>Data/privacy breach</td>
+                                <td>Low</td>
+                                <td>High</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>Scaling ops bottleneck</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="status status-monitored">Monitored</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== TECHNICAL PLAN TAB ==================== -->
+        <div class="tab-content" id="technical-content">
+            <div class="title-section">
+                <h1>Technical Architecture & Implementation</h1>
+                <p class="subtitle">Technical specifications covering tool stack, integrations, data flows, API requirements, and infrastructure decisions for the automated marketing service.</p>
+                <div class="doc-info">
+                    <span>Author: <strong>Abhishek Rastogi</strong></span>
+                    <span>•</span>
+                    <span>Version 1.0 Draft</span>
+                    <span>•</span>
+                    <span>December 2025</span>
+                </div>
+            </div>
+
+            <nav class="toc">
+                <div class="toc-header">
+                    <span class="toc-title">Table of Contents</span>
+                </div>
+                <div class="toc-content">
+                    <ol class="toc-list">
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#tech-overview" class="toc-link">1. Technical Overview</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#system-architecture">System Architecture</a></li>
+                                <li><a href="#design-principles">Design Principles</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#tool-stack" class="toc-link">2. Tool Stack</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#content-generation-tools">Content Generation</a></li>
+                                <li><a href="#video-generation-tools">Video Generation</a></li>
+                                <li><a href="#scheduling-publishing">Scheduling & Publishing</a></li>
+                                <li><a href="#stack-recommendations">Stack Recommendations</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#platform-integrations" class="toc-link">3. Platform Integrations</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#meta-integration">Meta (Facebook/Instagram)</a></li>
+                                <li><a href="#linkedin-integration">LinkedIn</a></li>
+                                <li><a href="#google-integration">Google Business Profile</a></li>
+                                <li><a href="#tiktok-integration">TikTok</a></li>
+                                <li><a href="#youtube-integration">YouTube</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#data-flows" class="toc-link">4. Data Flows</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#onboarding-flow">Onboarding Data Flow</a></li>
+                                <li><a href="#content-pipeline">Content Generation Pipeline</a></li>
+                                <li><a href="#publishing-flow">Publishing Flow</a></li>
+                                <li><a href="#analytics-flow">Analytics Collection</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#authentication" class="toc-link">5. Authentication & Security</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#oauth-flows">OAuth Flows</a></li>
+                                <li><a href="#token-management">Token Management</a></li>
+                                <li><a href="#data-security">Data Security</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#infrastructure" class="toc-link">6. Infrastructure</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#hosting-options">Hosting Options</a></li>
+                                <li><a href="#database-design">Database Design</a></li>
+                                <li><a href="#job-scheduling">Job Scheduling</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#monitoring" class="toc-link">7. Monitoring & Alerting</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#health-checks">Health Checks</a></li>
+                                <li><a href="#alert-rules">Alert Rules</a></li>
+                            </ul>
+                        </li>
+                        <li class="toc-item collapsed">
+                            <div class="toc-item-header">
+                                <a href="#tech-risks" class="toc-link">8. Technical Risks & Mitigations</a>
+                                <span class="toc-toggle" onclick="toggleTocItem(event, this)">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                            <ul class="toc-sublist">
+                                <li><a href="#api-risks">API & Integration Risks</a></li>
+                                <li><a href="#scaling-risks">Scaling Risks</a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 1: Technical Overview -->
+            <section id="tech-overview" data-section="Technical Overview">
+                <h2>Technical Overview</h2>
+
+                <p>The service operates as an orchestration layer that connects content generation AI, scheduling/publishing tools, and social platform APIs. Rather than building custom infrastructure for each capability, we leverage best-in-class SaaS tools and coordinate them through automation workflows.</p>
+
+                <h3 id="system-architecture">System Architecture</h3>
+
+                <div class="architecture-diagram">
+                    <div class="arch-row">
+                        <div class="arch-box">
+                            <div class="arch-box-label">Customer Input</div>
+                            <div class="arch-box-title">Onboarding Form</div>
+                        </div>
+                        <div class="arch-box">
+                            <div class="arch-box-label">Assets</div>
+                            <div class="arch-box-title">Brand Assets (Logo, Colors)</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box primary">
+                            <div class="arch-box-label">Core</div>
+                            <div class="arch-box-title">Customer Database</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box secondary">
+                            <div class="arch-box-label">AI Layer</div>
+                            <div class="arch-box-title">Content Generation</div>
+                        </div>
+                        <div class="arch-box secondary">
+                            <div class="arch-box-label">AI Layer</div>
+                            <div class="arch-box-title">Video Generation</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box primary">
+                            <div class="arch-box-label">Queue</div>
+                            <div class="arch-box-title">Content Queue + Review</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box">
+                            <div class="arch-box-label">Publishing</div>
+                            <div class="arch-box-title">Scheduling Tool</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-row">
+                        <div class="arch-box">
+                            <div class="arch-box-label">Platform</div>
+                            <div class="arch-box-title">LinkedIn</div>
+                        </div>
+                        <div class="arch-box">
+                            <div class="arch-box-label">Platform</div>
+                            <div class="arch-box-title">Meta</div>
+                        </div>
+                        <div class="arch-box">
+                            <div class="arch-box-label">Platform</div>
+                            <div class="arch-box-title">Google</div>
+                        </div>
+                        <div class="arch-box">
+                            <div class="arch-box-label">Platform</div>
+                            <div class="arch-box-title">TikTok</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="design-principles">Design Principles</h3>
+                <ul>
+                    <li><strong>Tool Agnosticism:</strong> Abstract tool-specific logic so we can swap vendors without rewriting workflows</li>
+                    <li><strong>Fail-Safe Defaults:</strong> If a system component fails, default to "don't publish" rather than publishing potentially broken content</li>
+                    <li><strong>Audit Trail:</strong> Log all content generation, reviews, and publishing events for debugging and compliance</li>
+                    <li><strong>Graceful Degradation:</strong> If video generation fails, fall back to image-only post rather than missing the slot entirely</li>
+                </ul>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 2: Tool Stack -->
+            <section id="tool-stack" data-section="Tool Stack">
+                <h2>Tool Stack</h2>
+
+                <p>The service relies on external SaaS tools for content generation, video creation, and scheduling. This section evaluates options and provides recommendations.</p>
+
+                <h3 id="content-generation-tools">Content Generation Tools</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Pricing</th>
+                                <th>Capabilities</th>
+                                <th>Verdict</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>YourAIAgent</strong></td>
+                                <td>$19.99/mo Pro</td>
+                                <td>Text posts, LinkedIn/Instagram agents, some video ("UGC Ads", "Reels")</td>
+                                <td><span class="status status-monitored">Needs Testing</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jasper</strong></td>
+                                <td>$49/mo Creator</td>
+                                <td>High-quality copywriting, templates, brand voice training</td>
+                                <td><span class="status status-alternative">Alternative</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Copy.ai</strong></td>
+                                <td>$49/mo Pro</td>
+                                <td>Social post templates, workflows, decent output quality</td>
+                                <td><span class="status status-alternative">Alternative</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Claude/GPT API</strong></td>
+                                <td>Usage-based</td>
+                                <td>Maximum flexibility, custom prompts, requires wrapper code</td>
+                                <td><span class="status status-recommended">Future Option</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout info">
+                    <div class="callout-title">💡 Decision Point</div>
+                    <p>YourAIAgent is the most cost-effective option if video quality is acceptable. <strong>Action required:</strong> Run hands-on evaluation with 10+ real prompts before committing. Test their "Reels & Stories" and "UGC Ads" agents specifically.</p>
+                </div>
+
+                <h3 id="video-generation-tools">Video Generation Tools</h3>
+
+                <h4>Avatar/Talking Head Tools</h4>
+                <p>Best for: explainer content, announcements, educational posts.</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Pricing</th>
+                                <th>Key Features</th>
+                                <th>Verdict</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>HeyGen</strong></td>
+                                <td>Free tier (3 videos), $29/mo Creator</td>
+                                <td>500+ avatars, custom avatar creation, video translation, lip-sync</td>
+                                <td><span class="status status-recommended">Recommended</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Synthesia</strong></td>
+                                <td>$29/mo (120 mins/year)</td>
+                                <td>160+ avatars, 140 languages, enterprise-grade quality</td>
+                                <td><span class="status status-alternative">Alternative</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>D-ID</strong></td>
+                                <td>~$25/mo</td>
+                                <td>Animate any photo to speak, good for custom presenter look</td>
+                                <td><span class="status status-alternative">Niche Use</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Stock Assembly Tools</h4>
+                <p>Best for: quick social content, promotional posts, tips/listicles.</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Pricing</th>
+                                <th>Key Features</th>
+                                <th>Verdict</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>InVideo AI</strong></td>
+                                <td>$28/mo Plus (50 AI mins)</td>
+                                <td>Text-to-video, stock footage assembly, voiceover, auto-captions</td>
+                                <td><span class="status status-recommended">Recommended</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pictory</strong></td>
+                                <td>~$19/mo Starter</td>
+                                <td>Article-to-video, blog repurposing, highlight extraction</td>
+                                <td><span class="status status-alternative">Alternative</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CapCut</strong></td>
+                                <td>Free / $7.99/mo Pro</td>
+                                <td>AI script-to-video, TikTok-native, trending templates</td>
+                                <td><span class="status status-recommended">Budget Option</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Video Quality Variance</div>
+                    <p>AI video generation is highly variable. The same prompt can produce professional-grade output or something unusable. <strong>Human review is mandatory</strong> for all video content before publishing. Budget for ~20% regeneration rate.</p>
+                </div>
+
+                <h3 id="scheduling-publishing">Scheduling & Publishing Tools</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Pricing</th>
+                                <th>Platform Coverage</th>
+                                <th>Verdict</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Buffer</strong></td>
+                                <td>$5/mo per channel</td>
+                                <td>All major platforms, simple API, reliable</td>
+                                <td><span class="status status-recommended">Recommended</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SocialBee</strong></td>
+                                <td>~$29/mo Bootstrap</td>
+                                <td>Category-based posting, content recycling, good for SMB</td>
+                                <td><span class="status status-alternative">Alternative</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hootsuite</strong></td>
+                                <td>$99/mo Professional</td>
+                                <td>Enterprise features, analytics, team management</td>
+                                <td><span class="status status-not-recommended">Too Expensive</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Publer</strong></td>
+                                <td>$12/mo Professional</td>
+                                <td>Auto-scheduling, link shortening, workspaces</td>
+                                <td><span class="status status-alternative">Budget Option</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="stack-recommendations">Stack Recommendations</h3>
+
+                <div class="callout success">
+                    <div class="callout-title">✅ Recommended Stack (Option A)</div>
+                    <p><strong>If YourAIAgent video passes quality testing:</strong></p>
+                    <ul>
+                        <li><span class="tag tag-tool">Content</span> YourAIAgent ($20/mo)</li>
+                        <li><span class="tag tag-tool">Publishing</span> Buffer ($5/mo per channel)</li>
+                    </ul>
+                    <p><strong>Cost per customer:</strong> ~$35-50/mo (depending on channel count)</p>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-title">📋 Fallback Stack (Option B)</div>
+                    <p><strong>If YourAIAgent video is inadequate:</strong></p>
+                    <ul>
+                        <li><span class="tag tag-tool">Text Content</span> YourAIAgent ($20/mo)</li>
+                        <li><span class="tag tag-tool">Video</span> InVideo AI + HeyGen (~$57/mo combined)</li>
+                        <li><span class="tag tag-tool">Publishing</span> Buffer ($5/mo per channel)</li>
+                    </ul>
+                    <p><strong>Cost per customer:</strong> ~$80-100/mo</p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 3: Platform Integrations -->
+            <section id="platform-integrations" data-section="Platform Integrations">
+                <h2>Platform Integrations</h2>
+
+                <p>Each social platform has different API capabilities, rate limits, and policy restrictions. Understanding these is critical to avoiding account bans and service disruptions.</p>
+
+                <h3 id="meta-integration">Meta (Facebook & Instagram)</h3>
+
+                <div class="callout success">
+                    <div class="callout-title">✅ Most Permissive Platform</div>
+                    <p>Meta actively supports third-party publishing via the Graph API. This is the safest platform for automation.</p>
+                </div>
+
+                <h4>Capabilities</h4>
+                <ul>
+                    <li><strong>Publishing:</strong> Feed posts, Stories, Reels supported via API</li>
+                    <li><strong>Rate Limit:</strong> 100 posts/day across all content types (generous)</li>
+                    <li><strong>Media Upload:</strong> Images, video (up to 10GB)</li>
+                    <li><strong>Analytics:</strong> Full insights access via API</li>
+                </ul>
+
+                <h4>Requirements</h4>
+                <ul>
+                    <li>Facebook Business Page (not personal profile)</li>
+                    <li>Instagram Business or Creator account (connected to FB Page)</li>
+                    <li>OAuth authorization for <code>pages_manage_posts</code>, <code>instagram_content_publish</code> permissions</li>
+                </ul>
+
+                <div class="config-block">
+<span class="comment"># Meta Graph API - Example Post Request</span>
+
+<span class="keyword">POST</span> /{page-id}/feed
+<span class="key">Content-Type:</span> <span class="value">application/json</span>
+<span class="key">Authorization:</span> <span class="value">Bearer {access_token}</span>
+
+{
+  <span class="string">"message"</span>: <span class="value">"Your post caption here..."</span>,
+  <span class="string">"link"</span>: <span class="value">"https://example.com"</span>,
+  <span class="string">"published"</span>: <span class="value">true</span>,
+  <span class="string">"scheduled_publish_time"</span>: <span class="value">1735689600</span>
+}
+                </div>
+
+                <h3 id="linkedin-integration">LinkedIn</h3>
+
+                <div class="callout danger">
+                    <div class="callout-title">🚫 Most Restrictive Platform</div>
+                    <p>LinkedIn explicitly prohibits automated software, bots, and scraping. They actively detect and ban accounts using automation. <strong>Proceed with extreme caution.</strong></p>
+                </div>
+
+                <h4>What's Allowed (Gray Zone)</h4>
+                <ul>
+                    <li><strong>Scheduled Publishing:</strong> Via official Marketing API partners (Buffer, Hootsuite, etc.)</li>
+                    <li><strong>Rate:</strong> Best practice is 1-2 posts/day max</li>
+                    <li><strong>Company Pages:</strong> Slightly more lenient than personal profiles</li>
+                </ul>
+
+                <h4>What's Prohibited</h4>
+                <ul>
+                    <li>Automated engagement (likes, comments, follows)</li>
+                    <li>Connection request automation</li>
+                    <li>Message automation (InMail bots)</li>
+                    <li>Profile viewing automation</li>
+                </ul>
+
+                <h4>Safe Operating Limits</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Activity</th>
+                                <th>Safe Limit</th>
+                                <th>Risk if Exceeded</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Posts per day</td>
+                                <td>1-2</td>
+                                <td>Medium (visibility throttling)</td>
+                            </tr>
+                            <tr>
+                                <td>Connection requests/day</td>
+                                <td>10-20</td>
+                                <td>High (account restriction)</td>
+                            </tr>
+                            <tr>
+                                <td>Profile views/day</td>
+                                <td>&lt;80</td>
+                                <td>High (detection)</td>
+                            </tr>
+                            <tr>
+                                <td>Messages/day</td>
+                                <td>50-100</td>
+                                <td>Very High (ban)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Policy Decision</div>
+                    <p><strong>Recommendation:</strong> LinkedIn is PUBLISH-ONLY. No engagement automation under any circumstances. Use only official API partners for scheduling. Include risk disclosure in customer agreements.</p>
+                </div>
+
+                <h3 id="google-integration">Google Business Profile</h3>
+
+                <h4>Capabilities</h4>
+                <ul>
+                    <li><strong>Posts:</strong> Supported via Business Profile API</li>
+                    <li><strong>Photos:</strong> Upload supported</li>
+                    <li><strong>Updates:</strong> What's New, Events, Offers post types</li>
+                </ul>
+
+                <h4>Limitations</h4>
+                <ul>
+                    <li><strong>API Access:</strong> Requires Google Cloud project approval</li>
+                    <li><strong>Q&A API:</strong> Deprecated as of November 2025</li>
+                    <li><strong>Reviews:</strong> No API access for review responses</li>
+                </ul>
+
+                <div class="callout info">
+                    <div class="callout-title">💡 Integration Approach</div>
+                    <p>Cannot build DIY integration easily. Must use authorized third-party tools (Buffer, Hootsuite, Social Champ) that already have API access approved.</p>
+                </div>
+
+                <h3 id="tiktok-integration">TikTok</h3>
+
+                <h4>Content Posting API</h4>
+                <p>TikTok's Content Posting API allows direct video uploads from third-party applications.</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Authentication</strong></td>
+                                <td>OAuth 2.0 with PKCE flow</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scopes Required</strong></td>
+                                <td><code>video.upload</code>, <code>video.publish</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Token Lifetime</strong></td>
+                                <td>Access: 24 hours, Refresh: 365 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Video Requirements</strong></td>
+                                <td>MP4/WebM, 15s-3min, max 4GB, 720p+ recommended</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rate Limits</strong></td>
+                                <td>~100 posts/day per app (shared across users)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Integration via Blotato</h4>
+                <p>Blotato provides a community N8N node that handles TikTok authentication and posting. Key advantages:</p>
+                <ul>
+                    <li><strong>No TikTok Developer Audit:</strong> Blotato has already passed TikTok's app review process</li>
+                    <li><strong>Automatic Token Refresh:</strong> Handles OAuth token lifecycle automatically</li>
+                    <li><strong>Unified API:</strong> Same interface as other platforms (Instagram, YouTube, etc.)</li>
+                </ul>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Important: N8N Cloud Limitation</div>
+                    <p>The Blotato N8N node is a <strong>community node</strong> that only works on self-hosted N8N instances. N8N Cloud does not support community nodes, so the infrastructure must be self-hosted.</p>
+                </div>
+
+                <h4>Direct API Alternative</h4>
+                <p>If implementing without Blotato, direct TikTok API integration requires:</p>
+                <ol>
+                    <li>Register as a TikTok for Developers partner</li>
+                    <li>Create an app and request Content Posting API access</li>
+                    <li>Complete TikTok's security audit (can take 2-4 weeks)</li>
+                    <li>Implement OAuth 2.0 PKCE flow for each customer</li>
+                    <li>Handle video upload via chunked transfer</li>
+                </ol>
+
+                <div class="callout danger">
+                    <div class="callout-title">⛔ Not Recommended</div>
+                    <p>Direct TikTok API implementation adds 40+ hours of development time and ongoing maintenance burden. Blotato at $29/month is significantly more cost-effective.</p>
+                </div>
+
+                <h4>Analytics Access</h4>
+                <p>TikTok video analytics require the <strong>Research API</strong>, which has separate approval requirements:</p>
+                <ul>
+                    <li>Academic or business research justification required</li>
+                    <li>Rate limited to ~1000 requests/day</li>
+                    <li>Approval timeline: 2-6 weeks</li>
+                </ul>
+                <p>For basic metrics (views, likes, shares), we recommend scraping the TikTok Studio dashboard weekly as a simpler alternative until Research API access is approved.</p>
+
+                <h3 id="youtube-integration">YouTube</h3>
+
+                <h4>YouTube Data API v3</h4>
+                <p>YouTube provides comprehensive API support for video uploads, including Shorts (videos under 60 seconds).</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Authentication</strong></td>
+                                <td>OAuth 2.0 (Google Cloud Console)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scopes Required</strong></td>
+                                <td><code>youtube.upload</code>, <code>youtube.readonly</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Default Quota</strong></td>
+                                <td>10,000 units/day (video upload = 1,600 units)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shorts Support</strong></td>
+                                <td>Videos ≤60s with #Shorts in title/description</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scheduling</strong></td>
+                                <td>Native via <code>publishAt</code> parameter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Quota Considerations</h4>
+                <p>YouTube's quota system is the primary constraint for automated publishing:</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operation</th>
+                                <th>Quota Cost</th>
+                                <th>Daily Limit (10K quota)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Video upload</td>
+                                <td>1,600 units</td>
+                                <td>~6 videos/day</td>
+                            </tr>
+                            <tr>
+                                <td>Video update (metadata)</td>
+                                <td>50 units</td>
+                                <td>~200 updates/day</td>
+                            </tr>
+                            <tr>
+                                <td>Channel read</td>
+                                <td>1 unit</td>
+                                <td>~10,000 reads/day</td>
+                            </tr>
+                            <tr>
+                                <td>Analytics read</td>
+                                <td>1 unit</td>
+                                <td>~10,000 reads/day</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Quota Planning</div>
+                    <p>With 6 uploads/day limit, a single API project can support ~40 customers at 1 video/week each. For higher volume, request a <strong>quota increase</strong> from Google Cloud Console (requires justification and may take 1-2 weeks).</p>
+                </div>
+
+                <h4>YouTube Shorts Best Practices</h4>
+                <ul>
+                    <li><strong>Duration:</strong> Maximum 60 seconds (shorter = better engagement)</li>
+                    <li><strong>Aspect Ratio:</strong> 9:16 vertical format required</li>
+                    <li><strong>Resolution:</strong> 1080x1920 recommended</li>
+                    <li><strong>Hashtag:</strong> Include <code>#Shorts</code> in title or description</li>
+                    <li><strong>Thumbnail:</strong> Auto-generated from video frame (no custom thumbnail for Shorts)</li>
+                </ul>
+
+                <h4>Integration via Blotato</h4>
+                <p>Blotato supports YouTube uploads with the same unified interface as other platforms. Benefits include:</p>
+                <ul>
+                    <li>OAuth flow handled per customer</li>
+                    <li>Automatic scheduling support</li>
+                    <li>Title/description templating</li>
+                    <li>Cross-posting from TikTok/Instagram Reels</li>
+                </ul>
+
+                <div class="callout success">
+                    <div class="callout-title">✓ Recommended Workflow</div>
+                    <p>Generate video once via InVideo AI → Publish to TikTok, Instagram Reels, AND YouTube Shorts simultaneously via Blotato. Maximizes content ROI with single production effort.</p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 4: Data Flows -->
+            <section id="data-flows" data-section="Data Flows">
+                <h2>Data Flows</h2>
+
+                <p>This section documents how data moves through the system from customer onboarding through content publishing and analytics collection.</p>
+
+                <h3 id="onboarding-flow">Onboarding Data Flow</h3>
+
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Customer Submits Onboarding Form</div>
+                            <div class="step-desc">Form data (business info, preferences, assets) → Stored in Customer Database</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">OAuth Authorization</div>
+                            <div class="step-desc">Customer authorizes social accounts → Access tokens stored (encrypted) in Token Vault</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Configuration Generation</div>
+                            <div class="step-desc">Onboarding specialist creates prompt template → Stored in Customer Config</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Tool Account Setup</div>
+                            <div class="step-desc">Customer workspace created in content generation tool + scheduling tool</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Test Content Generation</div>
+                            <div class="step-desc">3-5 sample posts generated → Sent to customer for approval</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-placeholder">
+                    <div class="example-placeholder-icon">📊</div>
+                    <div class="example-placeholder-text">Onboarding data flow diagram showing systems and data handoffs</div>
+                    <div class="example-placeholder-label">Add diagram</div>
+                </div>
+
+                <h3 id="content-pipeline">Content Generation Pipeline</h3>
+
+                <div class="config-block">
+<span class="comment"># Content Generation Pipeline (Pseudo-code)</span>
+
+<span class="keyword">def</span> generate_weekly_content(customer_id):
+    <span class="comment"># 1. Load customer configuration</span>
+    config = db.get_customer_config(customer_id)
+    
+    <span class="comment"># 2. Determine content needs</span>
+    platforms = config.platforms  <span class="comment"># ['linkedin', 'instagram', 'facebook']</span>
+    posts_per_week = config.tier.posts_per_week  <span class="comment"># 3, 5, or 7</span>
+    
+    <span class="comment"># 3. Generate text content</span>
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(posts_per_week):
+        prompt = build_prompt(config, content_type=<span class="string">'text_image'</span>)
+        content = ai_tool.generate(prompt)
+        
+        <span class="comment"># 4. Quality check</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> passes_guardrails(content, config.blocklist):
+            content = ai_tool.regenerate(prompt)
+        
+        <span class="comment"># 5. Queue for review (Growth/Premium) or auto-schedule (Basic)</span>
+        <span class="keyword">if</span> config.tier.requires_review:
+            queue.add_for_review(content, customer_id)
+        <span class="keyword">else</span>:
+            scheduler.schedule(content, customer_id)
+    
+    <span class="comment"># 6. Generate video content (Growth/Premium only)</span>
+    <span class="keyword">if</span> config.tier.includes_video:
+        video_count = config.tier.videos_per_week
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(video_count):
+            video = video_tool.generate(config)
+            queue.add_for_review(video, customer_id, priority=<span class="string">'high'</span>)
+                </div>
+
+                <h3 id="publishing-flow">Publishing Flow</h3>
+
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Scheduled Job Triggers</div>
+                            <div class="step-desc">Cron job runs at scheduled publish time (e.g., 9:00 AM customer local time)</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Fetch Approved Content</div>
+                            <div class="step-desc">Pull content from queue where status = 'approved' AND scheduled_time ≤ now</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Token Validation</div>
+                            <div class="step-desc">Check OAuth tokens are valid. Refresh if expired. Abort + alert if refresh fails.</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">API Call to Platform</div>
+                            <div class="step-desc">Push content via scheduling tool API → Platform API</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Log Result</div>
+                            <div class="step-desc">Record success/failure, post ID, timestamp in publishing log</div>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <div class="step-title">Retry on Failure</div>
+                            <div class="step-desc">If API error: retry 3x with exponential backoff. If still failing: alert ops team.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="analytics-flow">Analytics Collection</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Data Available</th>
+                                <th>Collection Method</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Meta (FB/IG)</td>
+                                <td>Full insights (reach, engagement, impressions)</td>
+                                <td>Graph API pull</td>
+                                <td>Daily</td>
+                            </tr>
+                            <tr>
+                                <td>LinkedIn</td>
+                                <td>Basic metrics (likes, comments, shares)</td>
+                                <td>Marketing API</td>
+                                <td>Daily</td>
+                            </tr>
+                            <tr>
+                                <td>Google Business</td>
+                                <td>Views, clicks, direction requests</td>
+                                <td>Business Profile API</td>
+                                <td>Weekly</td>
+                            </tr>
+                            <tr>
+                                <td>TikTok</td>
+                                <td>Views, likes, shares (requires approval)</td>
+                                <td>Research API</td>
+                                <td>Weekly</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">⚠️ Analytics Gap</div>
+                    <p>Programmatic analytics requires API access, which requires customer OAuth authorization. If customers don't complete authorization, we may need to fall back to manual screenshot collection or skip detailed metrics in reports.</p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 5: Authentication & Security -->
+            <section id="authentication" data-section="Authentication & Security">
+                <h2>Authentication & Security</h2>
+
+                <h3 id="oauth-flows">OAuth Flows</h3>
+
+                <p>All social platform connections use OAuth 2.0. Customer authorizes access during onboarding, granting specific permissions needed for publishing and analytics.</p>
+
+                <h4>Required Permissions by Platform</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Permissions Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Facebook</td>
+                                <td><code>pages_manage_posts</code>, <code>pages_read_engagement</code>, <code>pages_show_list</code></td>
+                            </tr>
+                            <tr>
+                                <td>Instagram</td>
+                                <td><code>instagram_content_publish</code>, <code>instagram_basic</code>, <code>instagram_manage_insights</code></td>
+                            </tr>
+                            <tr>
+                                <td>LinkedIn</td>
+                                <td><code>w_organization_social</code>, <code>r_organization_social</code> (Company Pages)</td>
+                            </tr>
+                            <tr>
+                                <td>Google</td>
+                                <td><code>business.manage</code> (Business Profile API)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="token-management">Token Management</h3>
+
+                <ul>
+                    <li><strong>Storage:</strong> Tokens encrypted at rest (AES-256) in dedicated token vault</li>
+                    <li><strong>Refresh:</strong> Automatic refresh before expiration (most tokens expire in 60-90 days)</li>
+                    <li><strong>Revocation Handling:</strong> If customer revokes access, detect on next API call → pause publishing → notify ops</li>
+                    <li><strong>Rotation:</strong> Refresh tokens rotated on each use where supported</li>
+                </ul>
+
+                <div class="config-block">
+<span class="comment"># Token Refresh Logic</span>
+
+<span class="keyword">def</span> get_valid_token(customer_id, platform):
+    token = vault.get_token(customer_id, platform)
+    
+    <span class="keyword">if</span> token.expires_at < now() + timedelta(days=7):
+        <span class="comment"># Token expiring soon, refresh proactively</span>
+        <span class="keyword">try</span>:
+            new_token = platform_api.refresh(token.refresh_token)
+            vault.store_token(customer_id, platform, new_token)
+            <span class="keyword">return</span> new_token
+        <span class="keyword">except</span> RefreshError:
+            <span class="comment"># Refresh failed - token likely revoked</span>
+            alert_ops(customer_id, platform, <span class="string">"Token refresh failed"</span>)
+            <span class="keyword">raise</span> TokenRevokedException()
+    
+    <span class="keyword">return</span> token
+                </div>
+
+                <h3 id="data-security">Data Security</h3>
+
+                <ul>
+                    <li><strong>Customer Data:</strong> Business info, preferences stored in encrypted database</li>
+                    <li><strong>Content:</strong> Generated posts stored temporarily (30 days post-publish)</li>
+                    <li><strong>Access Control:</strong> Role-based access - support can view, only ops can modify</li>
+                    <li><strong>Audit Logging:</strong> All access to customer data logged with timestamp, user, action</li>
+                    <li><strong>Data Retention:</strong> 30 days after churn, customer data deleted (configurable)</li>
+                </ul>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 6: Infrastructure -->
+            <section id="infrastructure" data-section="Infrastructure">
+                <h2>Infrastructure</h2>
+
+                <h3 id="hosting-options">Hosting Options</h3>
+
+                <p>Given the service orchestrates external SaaS tools rather than running heavy compute, infrastructure needs are modest.</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Pros</th>
+                                <th>Cons</th>
+                                <th>Est. Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Serverless (AWS Lambda / Vercel)</strong></td>
+                                <td>Pay-per-use, auto-scaling, minimal ops</td>
+                                <td>Cold starts, complexity for long jobs</td>
+                                <td>$20-100/mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Managed Platform (Railway / Render)</strong></td>
+                                <td>Simple deploy, built-in cron, reasonable pricing</td>
+                                <td>Less control, vendor lock-in</td>
+                                <td>$25-75/mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VPS (DigitalOcean / Linode)</strong></td>
+                                <td>Full control, predictable cost</td>
+                                <td>More ops overhead, manual scaling</td>
+                                <td>$20-60/mo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout success">
+                    <div class="callout-title">✅ Recommendation</div>
+                    <p>Start with <strong>Railway</strong> or <strong>Render</strong> for simplicity. Built-in cron jobs, easy database provisioning, and reasonable pricing for early stage. Migrate to AWS/GCP if scaling demands require it.</p>
+                </div>
+
+                <h3 id="database-design">Database Design</h3>
+
+                <h4>Core Tables</h4>
+                <div class="config-block">
+<span class="comment"># Simplified Schema</span>
+
+<span class="key">customers</span>
+  - id (PK)
+  - business_name
+  - industry
+  - tier (basic/growth/premium)
+  - created_at
+  - status (active/paused/churned)
+
+<span class="key">customer_configs</span>
+  - id (PK)
+  - customer_id (FK)
+  - prompt_template (JSON)
+  - blocklist (array)
+  - platforms (array)
+  - posting_schedule (JSON)
+
+<span class="key">oauth_tokens</span>
+  - id (PK)
+  - customer_id (FK)
+  - platform
+  - access_token (encrypted)
+  - refresh_token (encrypted)
+  - expires_at
+  - scopes
+
+<span class="key">content_queue</span>
+  - id (PK)
+  - customer_id (FK)
+  - content_type (text/image/video)
+  - content_data (JSON)
+  - status (pending/reviewed/approved/published/failed)
+  - scheduled_for
+  - platform
+
+<span class="key">publishing_log</span>
+  - id (PK)
+  - content_id (FK)
+  - customer_id (FK)
+  - platform
+  - result (success/failure)
+  - platform_post_id
+  - error_message
+  - timestamp
+                </div>
+
+                <h3 id="job-scheduling">Job Scheduling</h3>
+
+                <h4>Scheduled Jobs</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Job</th>
+                                <th>Frequency</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Content Generation (Basic)</td>
+                                <td>Weekly (Mon 6 AM)</td>
+                                <td>Generate week's content for all Basic tier customers</td>
+                            </tr>
+                            <tr>
+                                <td>Content Generation (Growth/Premium)</td>
+                                <td>Twice weekly (Mon/Thu 6 AM)</td>
+                                <td>Generate content with larger buffer</td>
+                            </tr>
+                            <tr>
+                                <td>Publishing Check</td>
+                                <td>Every 15 minutes</td>
+                                <td>Check queue for content ready to publish</td>
+                            </tr>
+                            <tr>
+                                <td>Token Refresh Check</td>
+                                <td>Daily (3 AM)</td>
+                                <td>Proactively refresh tokens expiring in &lt;7 days</td>
+                            </tr>
+                            <tr>
+                                <td>Analytics Collection</td>
+                                <td>Daily (5 AM)</td>
+                                <td>Pull metrics from all platforms</td>
+                            </tr>
+                            <tr>
+                                <td>Report Generation</td>
+                                <td>Weekly (Sun) / Monthly (1st)</td>
+                                <td>Generate and send performance reports</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 7: Monitoring & Alerting -->
+            <section id="monitoring" data-section="Monitoring & Alerting">
+                <h2>Monitoring & Alerting</h2>
+
+                <h3 id="health-checks">Health Checks</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Check</th>
+                                <th>Frequency</th>
+                                <th>Success Criteria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Database connectivity</td>
+                                <td>Every 1 min</td>
+                                <td>Response &lt;500ms</td>
+                            </tr>
+                            <tr>
+                                <td>Content generation API</td>
+                                <td>Every 5 min</td>
+                                <td>API responds, no errors</td>
+                            </tr>
+                            <tr>
+                                <td>Scheduling tool API</td>
+                                <td>Every 5 min</td>
+                                <td>API responds, auth valid</td>
+                            </tr>
+                            <tr>
+                                <td>Platform API endpoints</td>
+                                <td>Every 15 min</td>
+                                <td>Each platform reachable</td>
+                            </tr>
+                            <tr>
+                                <td>Publishing success rate</td>
+                                <td>Hourly</td>
+                                <td>&gt;95% success in last hour</td>
+                            </tr>
+                            <tr>
+                                <td>Queue depth</td>
+                                <td>Every 15 min</td>
+                                <td>No overdue items (&gt;2 hours past scheduled)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="alert-rules">Alert Rules</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alert</th>
+                                <th>Trigger</th>
+                                <th>Severity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Publishing Failure Spike</td>
+                                <td>&gt;10% failure rate in 1 hour</td>
+                                <td><span class="status status-open">Critical</span></td>
+                                <td>Page on-call, investigate immediately</td>
+                            </tr>
+                            <tr>
+                                <td>Token Refresh Failed</td>
+                                <td>Any customer token refresh fails</td>
+                                <td><span class="status status-monitored">Warning</span></td>
+                                <td>Notify ops, contact customer</td>
+                            </tr>
+                            <tr>
+                                <td>Content Generation Down</td>
+                                <td>AI tool API unreachable &gt;15 min</td>
+                                <td><span class="status status-open">Critical</span></td>
+                                <td>Switch to backup or pause generation</td>
+                            </tr>
+                            <tr>
+                                <td>Queue Backup</td>
+                                <td>&gt;50 items overdue</td>
+                                <td><span class="status status-monitored">Warning</span></td>
+                                <td>Investigate pipeline, clear backlog</td>
+                            </tr>
+                            <tr>
+                                <td>Platform API Degraded</td>
+                                <td>Response time &gt;5s for platform</td>
+                                <td><span class="status status-mitigated">Info</span></td>
+                                <td>Monitor, prepare customer comms if persists</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout">
+                    <div class="callout-title">📱 Notification Channels</div>
+                    <ul>
+                        <li><strong>Critical:</strong> PagerDuty / Opsgenie → Phone call + SMS</li>
+                        <li><strong>Warning:</strong> Slack #ops-alerts → Immediate visibility</li>
+                        <li><strong>Info:</strong> Slack #ops-monitoring → Logged for review</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span class="divider-symbol">◆</span>
+            </div>
+
+            <!-- Section 8: Technical Risks -->
+            <section id="tech-risks" data-section="Technical Risks & Mitigations">
+                <h2>Technical Risks & Mitigations</h2>
+
+                <h3 id="api-risks">API & Integration Risks</h3>
+
+                <div class="callout danger">
+                    <div class="callout-title">🔴 Platform API Changes</div>
+                    <p><strong>Risk:</strong> Social platforms change APIs without notice, breaking publishing.</p>
+                    <p><strong>Likelihood:</strong> Medium &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Use established scheduling tools (Buffer, etc.) that absorb API changes</li>
+                        <li>Monitor platform developer changelogs</li>
+                        <li>Maintain 2-week content buffer to handle outages</li>
+                        <li>Have manual publishing fallback procedure documented</li>
+                    </ul>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">🟡 Rate Limiting</div>
+                    <p><strong>Risk:</strong> Hit platform rate limits during batch operations.</p>
+                    <p><strong>Likelihood:</strong> Medium &nbsp;|&nbsp; <strong>Impact:</strong> Medium</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Implement request queuing with backoff</li>
+                        <li>Spread batch jobs across time (not all customers at once)</li>
+                        <li>Monitor rate limit headers, throttle proactively</li>
+                    </ul>
+                </div>
+
+                <div class="callout warning">
+                    <div class="callout-title">🟡 AI Tool Vendor Risk</div>
+                    <p><strong>Risk:</strong> Content generation tool changes pricing, quality, or shuts down.</p>
+                    <p><strong>Likelihood:</strong> Low-Medium &nbsp;|&nbsp; <strong>Impact:</strong> High</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Abstract tool interface so swapping is easier</li>
+                        <li>Maintain evaluation notes on alternative tools</li>
+                        <li>Export prompt templates in portable format</li>
+                        <li>Consider building direct LLM API integration as backup</li>
+                    </ul>
+                </div>
+
+                <h3 id="scaling-risks">Scaling Risks</h3>
+
+                <div class="callout warning">
+                    <div class="callout-title">🟡 Content Generation Bottleneck</div>
+                    <p><strong>Risk:</strong> Generation jobs take too long as customer count grows.</p>
+                    <p><strong>Likelihood:</strong> Medium &nbsp;|&nbsp; <strong>Impact:</strong> Medium</p>
+                    <p><strong>Mitigation:</strong></p>
+                    <ul>
+                        <li>Parallelize generation (multiple workers)</li>
+                        <li>Stagger job schedules across customer tiers</li>
+                        <li>Monitor job duration, alert if exceeding thresholds</li>
+                        <li>At 200+ customers, evaluate dedicated generation infrastructure</li>
+                    </ul>
+                </div>
+
+                <h3>Technical Risk Register</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Risk</th>
+                                <th>Likelihood</th>
+                                <th>Impact</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Platform API breaking changes</td>
+                                <td>Medium</td>
+                                <td>High</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>OAuth token expiration/revocation</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>AI tool vendor failure</td>
+                                <td>Low</td>
+                                <td>High</td>
+                                <td><span class="status status-monitored">Monitored</span></td>
+                            </tr>
+                            <tr>
+                                <td>Rate limiting during scale</td>
+                                <td>Medium</td>
+                                <td>Medium</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                            <tr>
+                                <td>Database performance degradation</td>
+                                <td>Low</td>
+                                <td>Medium</td>
+                                <td><span class="status status-monitored">Monitored</span></td>
+                            </tr>
+                            <tr>
+                                <td>Content generation job timeout</td>
+                                <td>Medium</td>
+                                <td>Low</td>
+                                <td><span class="status status-mitigated">Mitigated</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-divider"></div>
+        <p><strong>Automated Digital Marketing Managed Services</strong></p>
+        <p>Documentation v1.0 Draft • Prepared by Abhishek Rastogi • December 2025</p>
+        <p style="margin-top: var(--space-md);">This document is confidential and intended for internal planning purposes.</p>
+        <p class="ai-credit">Generated with the assistance of Claude (Opus 4.5) by Anthropic</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+        // Theme Toggle with System Preference Support
+        function getSystemTheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function toggleTheme() {
+            const root = document.documentElement;
+            const currentTheme = root.getAttribute('data-theme');
+            const systemTheme = getSystemTheme();
+
+            let newTheme;
+            if (!currentTheme) {
+                // First toggle: go opposite of system
+                newTheme = systemTheme === 'dark' ? 'light' : 'dark';
+            } else if (currentTheme === systemTheme) {
+                // Remove override to follow system
+                root.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+                return;
+            } else {
+                // Toggle between light and dark
+                newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            }
+
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Load saved theme preference on page load
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        })();
+
+        // Document Selector Dropdown
+        function toggleDocSelector() {
+            const selector = document.getElementById('docSelector');
+            selector.classList.toggle('open');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const selector = document.getElementById('docSelector');
+            if (!selector.contains(e.target)) {
+                selector.classList.remove('open');
+            }
+        });
+
+        // Tab Switching with Page Transition
+        let isTransitioning = false;
+
+        function switchTab(tabId) {
+            if (isTransitioning) return;
+
+            const currentActive = document.querySelector('.tab-content.active');
+            const targetContent = document.getElementById(tabId + '-content');
+
+            // Don't transition if already on this tab
+            if (currentActive === targetContent) {
+                document.getElementById('docSelector').classList.remove('open');
+                return;
+            }
+
+            isTransitioning = true;
+            const transition = document.getElementById('pageTransition');
+
+            // Close dropdown
+            document.getElementById('docSelector').classList.remove('open');
+
+            // Start fade to white
+            transition.classList.add('active');
+
+            setTimeout(() => {
+                // Update dropdown menu items
+                document.querySelectorAll('.doc-selector-item').forEach(item => {
+                    item.classList.remove('active');
+                    if (item.dataset.tab === tabId) {
+                        item.classList.add('active');
+                    }
+                });
+
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                targetContent.classList.add('active');
+
+                // Update header doc type
+                const docType = document.getElementById('docType');
+                if (tabId === 'operational') {
+                    docType.textContent = 'Operational Plan';
+                } else if (tabId === 'technical') {
+                    docType.textContent = 'Technical Plan';
+                }
+
+                // Reset current section display
+                document.getElementById('currentSection').classList.remove('visible');
+
+                // Scroll to top instantly (during white overlay)
+                window.scrollTo({ top: 0, behavior: 'instant' });
+
+                // Fade from white
+                setTimeout(() => {
+                    transition.classList.remove('active');
+                    isTransitioning = false;
+                }, 50);
+            }, 150);
+        }
+
+        // Toggle TOC Item
+        function toggleTocItem(event, toggleElement) {
+            event.preventDefault();
+            event.stopPropagation();
+            const tocItem = toggleElement.closest('.toc-item');
+            tocItem.classList.toggle('collapsed');
+        }
+
+        // Back to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide back to top button & update header
+        const backToTopBtn = document.getElementById('backToTop');
+        const header = document.getElementById('header');
+        const currentSectionEl = document.getElementById('currentSection');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            // Back to top button visibility
+            if (scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+
+            // Header shadow
+            if (scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Current section tracking - only for active tab
+            const activeContent = document.querySelector('.tab-content.active');
+            if (activeContent) {
+                const sections = activeContent.querySelectorAll('section[data-section]');
+                let currentSection = '';
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 120 && rect.bottom > 120) {
+                        currentSection = section.dataset.section;
+                    }
+                });
+
+                if (currentSection && scrollY > 300) {
+                    currentSectionEl.textContent = currentSection;
+                    currentSectionEl.classList.add('visible');
+                } else {
+                    currentSectionEl.classList.remove('visible');
+                }
+            }
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc-link, .toc-sublist a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
